@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Desserts from './Desserts.jsx';
 import Cart from './Cart.jsx';
+import type { Dessert, CartItem } from '../data/types'; 
 
-const App = () => {
-  const [cart, setCart] = useState([]);
+const App: React.FC = () => {
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (dessert) => {
+  const addToCart = (dessert: Dessert) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find(item => item.name === dessert.name);
       if (existingItem) {
@@ -20,7 +21,7 @@ const App = () => {
     });
   };
 
-  const removeFromCart = (dessert) => {
+  const removeFromCart = (dessert: Dessert) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find(item => item.name === dessert.name);
       if (existingItem) {
@@ -44,9 +45,9 @@ const App = () => {
 
   return (
     <div className="container grid grid-cols-2 gap-14 my-16" >
-      <Desserts cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} client:load />
+      <Desserts cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
       <aside>
-        <Cart cart={cart} setCart={setCart} client:load />
+        <Cart cart={cart} setCart={setCart} />
       </aside>
     </div>
   );

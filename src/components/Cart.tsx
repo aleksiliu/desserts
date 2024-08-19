@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-const Cart = ({ cart, setCart }) => {
+
+import type { CartItem } from '../data/types'; 
+
+interface CartProps {
+  cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+}
+
+const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const calculateTotal = () => {
@@ -39,7 +47,7 @@ const Cart = ({ cart, setCart }) => {
           ))}
         </ul>
         <p> Order Total: {calculateTotal()} €</p>
-        <button onClick={handleConfirmOrder} class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
+        <button onClick={handleConfirmOrder} className="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
         Confirm Order
       </button>
       </>
