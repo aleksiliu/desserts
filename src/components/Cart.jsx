@@ -12,6 +12,7 @@ const Cart = ({ cart }) => {
         <p className="text-gray-500 text-center">Your added items will appear here</p>
         </>
       ) : (
+        <>
         <ul>
           {cart.map((item) => (
             <li key={item.name} className="mb-2">
@@ -19,6 +20,10 @@ const Cart = ({ cart }) => {
             </li>
           ))}
         </ul>
+        <button class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full">
+        Confirm Order
+      </button>
+      </>
       )}
     </div>
   );
