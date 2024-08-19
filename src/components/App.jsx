@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Desserts from './Desserts.jsx';
 import Cart from './Cart.jsx';
 
-function App() {
+const App = () => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (dessert) => {
