@@ -46,7 +46,7 @@ function App() {
     <div className="container grid grid-cols-2 gap-14 my-16" >
       <Desserts cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} client:load />
       <aside>
-        <Cart cart={cart} client:load />
+        <Cart cart={cart} setCart={setCart} client:load />
       </aside>
     </div>
   );

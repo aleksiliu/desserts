@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const calculateTotal = () => {
@@ -15,7 +15,8 @@ const Cart = ({ cart }) => {
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
+     setCart([]);
+     setIsModalOpen(false);
   };
 
   return (
@@ -48,6 +49,7 @@ const Cart = ({ cart }) => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         title="Order Confirmed"
+        buttonText="Start New Order"
       >
         <p className="text-gray-700">Thank you for your purchase.</p>
         {cart.map((dessert) => {
