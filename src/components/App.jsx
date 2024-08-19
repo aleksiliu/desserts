@@ -21,8 +21,8 @@ function App() {
   };
 
   return (
-    <div className="container grid grid-cols-2 gap-14">
-      <Desserts addToCart={addToCart} client:load />
+    <div className="container grid grid-cols-2 gap-14 my-16" >
+      <Desserts cart={cart} addToCart={addToCart} client:load />
       <aside>
         <Cart cart={cart} client:load />
       </aside>
