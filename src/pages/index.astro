@@ -1,16 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Desserts from '../components/Desserts.astro';
-import Cart from '../components/Cart.astro';
+import App from '../components/App';
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="container grid grid-cols-2 gap-14">
-		<Desserts />
-	<aside>
-		<Cart />
-	</aside>
-	</div>
+	<App />
 </Layout>
 
 <style>

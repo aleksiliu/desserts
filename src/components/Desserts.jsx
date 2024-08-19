@@ -1,7 +1,8 @@
----
+import React from 'react';
 import { dessertItems } from '../data/desserts';
----
 
+function Desserts({ addToCart }) {
+  return (
 <main class="my-16">
   <h1 class="text-4xl font-semibold tracking-[-0.96px] mb-8">
    Desserts
@@ -13,16 +14,16 @@ import { dessertItems } from '../data/desserts';
                 {<img class="rounded mb-4" src={dessert.image.desktop} />}
                 <div class="group absolute bottom-20">
 
-                <!-- Main Button -->
+              
                 <button class="bg-white text-black border border-slate-500 px-6 py-4 rounded-full group-hover:hidden">
                         Add to Cart
                         </button>
 
-                <!-- Hidden Button -->
+        
                 <div class="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:block">
-                    <button  class="text-lg font-bold px-2">-</button>
+                    <button class="text-lg font-bold px-2">-</button>
                     <span class="text-lg">1</span>
-                    <button  class="text-lg font-bold px-2">+</button>
+                    <button class="text-lg font-bold px-2">+</button>
                 </div>
             </div>
         </div>
@@ -37,3 +38,7 @@ import { dessertItems } from '../data/desserts';
       )))}
   </div>
 </main>
+  );
+}
+
+export default Desserts;
