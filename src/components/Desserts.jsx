@@ -1,7 +1,7 @@
 import React from 'react';
 import { dessertItems } from '../data/desserts';
 
-const Desserts = ({ addToCart, cart }) => {
+const Desserts = ({ addToCart, removeFromCart, cart }) => {
   return (
     <main>
       <h1 className="text-4xl font-semibold tracking-[-0.96px] mb-8">
@@ -26,7 +26,7 @@ const Desserts = ({ addToCart, cart }) => {
                     Add to Cart
                   </button>
                   <div className="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:flex items-center">
-                    <button className="text-lg font-bold px-2">-</button>
+                    <button onClick={() => removeFromCart(dessert)} className="text-lg font-bold px-2">-</button>
                     <span className="text-lg">{quantity}</span>
                     <button onClick={() => addToCart(dessert)} className="text-lg font-bold px-2">+</button>
                   </div>
