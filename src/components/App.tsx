@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
-import Desserts from './Desserts.jsx';
+import Watches from './Watches.jsx';
 import Cart from './Cart.jsx';
-import type { Dessert, CartItem } from '../data/types'; 
+import type { Watch, CartItem } from '../data/types'; 
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (dessert: Dessert) => {
+  const addToCart = (watch: Watch) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find(item => item.name === dessert.name);
+      const existingItem = prevCart.find(item => item.name === watch.name);
       if (existingItem) {
         return prevCart.map(item =>
-          item.name === dessert.name
+          item.name === watch.name
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        return [...prevCart, { ...dessert, quantity: 1 }];
+        return [...prevCart, { ...watch, quantity: 1 }];
       }
     });
   };
 
-  const removeFromCart = (dessert: Dessert) => {
+  const removeFromCart = (watch: Watch) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find(item => item.name === dessert.name);
+      const existingItem = prevCart.find(item => item.name === watch.name);
       if (existingItem) {
         if (existingItem.quantity === 1) {
           // If the quantity is 1, remove the item from the cart
-          return prevCart.filter(item => item.name !== dessert.name);
+          return prevCart.filter(item => item.name !== watch.name);
         } else {
           // Otherwise, decrease the quantity by 1
           return prevCart.map(item =>
-            item.name === dessert.name
+            item.name === watch.name
               ? { ...item, quantity: item.quantity - 1 }
               : item
           );
@@ -45,7 +45,7 @@ const App: React.FC = () => {
 
   return (
     <div className="container grid grid-cols-2 gap-14 my-16" >
-      <Desserts cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
+      <Watches cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
       <aside>
         <Cart cart={cart} setCart={setCart} />
       </aside>

@@ -1,16 +1,11 @@
-export interface Dessert {
-    name: string;
-    category: string;
-    price: number;
-    image: {
-      thumbnail: string;
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-  }
+export interface Watch {
+  image: string;
+  name: string;
+  brand: string;
+  price: number;
+}
   
-  export interface CartItem extends Dessert {
+  export interface CartItem extends Watch {
     quantity: number;
   }
   

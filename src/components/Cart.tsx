@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-
 import type { CartItem } from '../data/types'; 
 
 interface CartProps {
@@ -60,12 +59,12 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
         buttonText="Start New Order"
       >
         <p className="text-gray-700">Thank you for your purchase.</p>
-        {cart.map((dessert) => {
+        {cart.map((watch) => {
           return (
-            <div key={dessert.name} className="relative mt-4">
-              <p>{dessert.category}</p>
-              <h2 className="font-bold">{dessert.quantity} x {dessert.name}</h2>
-              <p className="text-orange-700">{dessert.price} €</p>
+            <div key={watch.name} className="relative mt-4">
+              <p>{watch.brand}</p>
+              <h2 className="font-bold">{watch.quantity} x {watch.name}</h2>
+              <p className="text-orange-700">{watch.price} €</p>
              
             </div>
           );
