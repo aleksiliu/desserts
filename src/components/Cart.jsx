@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Cart = ({ cart }) => {
+
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => {
+      return total + item.quantity * item.price;
+    }, 0).toFixed(2); // Format to 2 decimal places
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-xl font-semibold text-orange-700 mb-4">
@@ -20,7 +27,8 @@ const Cart = ({ cart }) => {
             </li>
           ))}
         </ul>
-        <button class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full">
+        <p> Order Total: {calculateTotal()} €</p>
+        <button class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
         Confirm Order
       </button>
       </>
