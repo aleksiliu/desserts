@@ -3,16 +3,16 @@ import { dessertItems } from '../data/desserts';
 ---
 
 <main class="my-16">
-  <h1 class="text-4xl font-semibold tracking-[-0.96px] text-center mb-16">
+  <h1 class="text-4xl font-semibold tracking-[-0.96px] mb-8">
    Desserts
   </h1>
-  <div class="grid grid-cols-3 gap-14">
+  <div class="grid grid-cols-3 gap-6">
     {dessertItems.map((dessert => (
         <div>
-        {<img src={dessert.image.desktop} />}
-        <p>{dessert.category}</p>
-        <p>{dessert.name}</p>
-        <p>{dessert.price}</p>
+        {<img class="rounded mb-4" src={dessert.image.desktop} />}
+        <span>{dessert.category}</span>
+        <h2 class="font-bold">{dessert.name}</h2>
+        <p class="text-red-600">{dessert.price} €</p>
         </div>
       )))}
        {dessertItems.length > 0 && <p>We have {dessertItems.length} items.</p>}
