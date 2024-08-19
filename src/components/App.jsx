@@ -1,7 +1,6 @@
-// /src/components/App.jsx
 import React, { useState } from 'react';
-import Desserts from './Desserts';
-import Cart from './Cart';
+import Desserts from './Desserts.jsx';
+import Cart from './Cart.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,9 +22,9 @@ function App() {
 
   return (
     <div className="container grid grid-cols-2 gap-14">
-      <Desserts addToCart={addToCart} />
+      <Desserts addToCart={addToCart} client:load />
       <aside>
-        <Cart cart={cart} />
+        <Cart cart={cart} client:load />
       </aside>
     </div>
   );

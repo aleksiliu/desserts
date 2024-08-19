@@ -1,37 +1,36 @@
 import React from 'react';
 import { dessertItems } from '../data/desserts';
 
-function Desserts({ addToCart }) {
+const Desserts = ({ addToCart })  => {
   return (
-<main class="my-16">
-  <h1 class="text-4xl font-semibold tracking-[-0.96px] mb-8">
+<main className="my-16">
+  <h1 className="text-4xl font-semibold tracking-[-0.96px] mb-8">
    Desserts
   </h1>
-  <div class="grid grid-cols-3 gap-6">
+  <div className="grid grid-cols-3 gap-6">
     {dessertItems.map((dessert => (
-        <div class="relative">
-            <div class="flex justify-center"> 
-                {<img class="rounded mb-4" src={dessert.image.desktop} />}
-                <div class="group absolute bottom-20">
+        <div className="relative">
+            <div className="flex justify-center"> 
+                {<img className="rounded mb-4" src={dessert.image.desktop} />}
+                <div className="group absolute bottom-20">
 
               
-                <button class="bg-white text-black border border-slate-500 px-6 py-4 rounded-full group-hover:hidden">
+                <button className="bg-white text-black border border-slate-500 px-6 py-4 rounded-full group-hover:hidden">
                         Add to Cart
                         </button>
 
         
-                <div class="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:block">
-                    <button class="text-lg font-bold px-2">-</button>
-                    <span class="text-lg">1</span>
-                    <button class="text-lg font-bold px-2">+</button>
+                <div className="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:block">
+                    <button className="text-lg font-bold px-2">-</button>
+                    <span className="text-lg">1</span>
+                    <button onClick={() => addToCart(dessert)} className="text-lg font-bold px-2">+</button>
                 </div>
             </div>
         </div>
-
-        
+ 
         <p>{dessert.category}</p>
-        <h2 class="font-bold">{dessert.name}</h2>
-        <p class="text-orange-700">{dessert.price} €</p>
+        <h2 className="font-bold">{dessert.name}</h2>
+        <p className="text-orange-700">{dessert.price} €</p>
         
         </div>
 

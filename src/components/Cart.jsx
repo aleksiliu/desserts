@@ -4,12 +4,13 @@ import CakeIllustration from '../assets/illustration-empty-cart.svg';
 
 function Cart({ cart }) {
   return (
-<section class="my-16">
-<div class="bg-white px-2 py-2 ">
-    <h3 class="text-xl font-semibold text-orange-700 mb-4"> Your cart (0)</h3>
-    <img src={CakeIllustration} alt="" class="mx-auto mb-4 w-24 h-24" />
-    <p class="text-center">You  added items will appear here {cart.length}</p>
+<section className="my-16">
+<div className="bg-white px-2 py-2 ">
+    <h3 className="text-xl font-semibold text-orange-700 mb-4"> Your cart (0)</h3>
+    <img src={CakeIllustration} alt="" className="mx-auto mb-4 w-24 h-24" />
+    <p className="text-center">You added items will appear here {cart.length}</p>
 </div>
+{console.log(cart)}
 </section>
   );
 }
