@@ -9,28 +9,25 @@ import { dessertItems } from '../data/desserts';
   <div class="grid grid-cols-3 gap-6">
     {dessertItems.map((dessert => (
         <div class="relative">
-        {<img class="rounded mb-4" src={dessert.image.desktop} />}
+            <div class="flex justify-center"> 
+                {<img class="rounded mb-4" src={dessert.image.desktop} />}
+                <div class="group absolute bottom-20">
+
+                <!-- Main Button -->
+                <button class="bg-white text-black border border-slate-500 px-6 py-4 rounded-full group-hover:hidden">
+                        Add to Cart
+                        </button>
+
+                <!-- Hidden Button -->
+                <div class="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:block">
+                    <button  class="text-lg font-bold px-2">-</button>
+                    <span class="text-lg">asdds</span>
+                    <button  class="text-lg font-bold px-2">+</button>
+                </div>
+            </div>
+        </div>
 
         
-        <div class="group inline-block absolute bottom-20">
-            
-  <!-- Main Button -->
-  <button class="bg-white text-black border border-slate-500 px-6 py-4 rounded-lg group-hover:hidden">
-        Add to Cart
-        </button>
-
-  <!-- Hidden Button -->
-  <div class="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-lg hidden group-hover:block">
-      <button  class="text-lg font-bold px-2">-</button>
-      <span class="text-lg">asdds</span>
-      <button  class="text-lg font-bold px-2">+</button>
-    </div>
-</div>
-
-        
-  
-
-
         <p>{dessert.category}</p>
         <h2 class="font-bold">{dessert.name}</h2>
         <p class="text-orange-700">{dessert.price} €</p>
