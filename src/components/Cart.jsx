@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Cart = ({ cart }) => {
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const calculateTotal = () => {
     return cart.reduce((total, item) => {
       return total + item.quantity * item.price;
     }, 0).toFixed(2); // Format to 2 decimal places
+  };
+
+  const handleConfirmOrder = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -28,11 +38,30 @@ const Cart = ({ cart }) => {
           ))}
         </ul>
         <p> Order Total: {calculateTotal()} €</p>
-        <button class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
+        <button onClick={handleConfirmOrder} class="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
         Confirm Order
       </button>
       </>
       )}
+      
+        <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Order Confirmed"
+      >
+        <p className="text-gray-700">Thank you for your purchase.</p>
+        {cart.map((dessert) => {
+          return (
+            <div key={dessert.name} className="relative mt-4">
+              <p>{dessert.category}</p>
+              <h2 className="font-bold">{dessert.quantity} x {dessert.name}</h2>
+              <p className="text-orange-700">{dessert.price} €</p>
+             
+            </div>
+          );
+        })}
+         <p> Order Total: {calculateTotal()} €</p>
+      </Modal>
     </div>
   );
 }
