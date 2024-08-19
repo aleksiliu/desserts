@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Desserts from '../components/Desserts.astro';
+import Cart from '../components/Cart.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="container">
-		<div>saddsa</div>
+	<div class="container grid grid-cols-2 gap-14">
+		<Desserts />
 	<aside>
-		dsaadsds
+		<Cart />
 	</aside>
-</main>
+	</div>
 </Layout>
 
 <style>
