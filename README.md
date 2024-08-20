@@ -4,6 +4,8 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
 
 ## Overview
 
+This app is an e-commerce platform designed to allow users to browse watches. The application features a clean and intuitive user interface, allowing users to add items to their cart, view the total price of their selected items, and confirm their order through a modal-based checkout process.
+
 ### The challenge
 
 Users should be able to:
