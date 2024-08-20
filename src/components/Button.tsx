@@ -23,8 +23,8 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const baseStyle = `text-black border border-slate-500 px-6 py-4 rounded-full flex items-center shadow ${className}`;
   const colorStyles = {
-    primary: `bg-white hover:bg-white-500 focus:ring-blue-300 disabled:bg-blue-300`,
-    secondary: `bg-blue-500 hover:bg-blue-600 focus:ring-blue-300 disabled:bg-blue-300`,
+    primary: `bg-white hover:bg-white-500`,
+    secondary: `bg-indigo-400 hover:bg-indigo-500`,
   };
 
   return (

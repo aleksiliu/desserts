@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../components/Button';
 
 const Modal = ({ isOpen, onClose, title, children, buttonText }) => {
   if (!isOpen) return null;
@@ -10,12 +11,7 @@ const Modal = ({ isOpen, onClose, title, children, buttonText }) => {
         <div className="mb-6">
           {children}
         </div>
-        <button
-          onClick={onClose}
-          className="bg-orange-600 text-white px-4 py-2 rounded-full"
-        >
-         { buttonText }
-        </button>
+        <Button text={buttonText} color="secondary" onClick={onClose} className='w-full' />
       </div>
     </div>
   );

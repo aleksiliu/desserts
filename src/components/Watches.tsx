@@ -28,8 +28,8 @@ const Watches: React.FC<WatchesProps> = ({ addToCart, removeFromCart, cart }) =>
                 <img className="rounded mb-4" src={watch.image} alt={watch.name} />
                 <div className="group relative -mt-10 z-1 flex justify-center">
                   <Button text="Add to Cart" onClick={() => addToCart(watch)} className='group-hover:hidden' />
-                    
-                  <div className="bg-orange-700 hover:bg-orange-800 text-white px-6 py-4 rounded-full hidden group-hover:inline-block">
+         
+                  <div className="bg-indigo-400 hover:bg-indigo-500 text-white px-6 py-4 rounded-full hidden group-hover:inline-block">
                     <button onClick={() => removeFromCart(watch)} className="text-lg font-bold px-2">-</button>
                     <span className="text-lg">{quantity}</span>
                     <button onClick={() => addToCart(watch)} className="text-lg font-bold px-2">+</button>
@@ -38,7 +38,7 @@ const Watches: React.FC<WatchesProps> = ({ addToCart, removeFromCart, cart }) =>
               </div>
               <p>{watch.brand}</p>
               <h2 className="font-bold">{watch.name}</h2>
-              <p className="text-orange-700">{watch.price} €</p>
+              <p className="text-gray-300">{watch.price} €</p>
             </div>
           );
         })}

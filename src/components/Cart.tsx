@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 
 import type { CartItem } from '../data/types'; 
+import Button from './Button';
 
 interface CartProps {
   cart: CartItem[];
@@ -39,7 +40,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
 <path d="M425 275C418.097 275 412.5 280.597 412.5 287.5V400C412.5 400.105 412.513 400.205 412.516 400.309C412.522 400.562 412.533 400.816 412.555 401.069C412.569 401.239 412.589 401.406 412.611 401.573C412.641 401.808 412.675 402.041 412.717 402.275C412.752 402.461 412.791 402.645 412.834 402.828C412.883 403.034 412.934 403.241 412.994 403.445C413.052 403.65 413.117 403.85 413.186 404.05C413.247 404.23 413.311 404.408 413.381 404.586C413.467 404.803 413.561 405.017 413.658 405.228C413.731 405.386 413.805 405.542 413.884 405.697C413.998 405.919 414.12 406.134 414.247 406.348C414.302 406.441 414.345 406.536 414.402 406.627L476.902 506.627C479.273 510.42 483.347 512.503 487.514 512.503C489.777 512.503 492.067 511.889 494.127 510.602C499.981 506.942 501.759 499.231 498.102 493.377L437.5 396.414V287.5C437.5 280.597 431.903 275 425 275Z" fill="white"/>
 </svg>
 
-        <p className="text-gray-500 text-center">Your added items will appear here</p>
+        <p className="text-gray-300 text-center">Your added items will appear here</p>
         </>
       ) : (
         <>
@@ -51,9 +52,9 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
           ))}
         </ul>
         <p> Order Total: {calculateTotal()} €</p>
-        <button onClick={handleConfirmOrder} className="bg-orange-700 hover:orange-800 text-white font-semibold py-2 px-4 rounded-full w-full mt-4">
-        Confirm Order
-      </button>
+
+      <Button text="Confirm Order" color="secondary" onClick={handleConfirmOrder} className='w-full' />
+      
       </>
       )}
       
@@ -63,7 +64,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
         title="Order Confirmed"
         buttonText="Start New Order"
       >
-        <p className="text-gray-700">Thank you for your purchase.</p>
+        <p className="text-gray-300">Thank you for your purchase.</p>
         {cart.map((watch) => {
           return (
             <div key={watch.name} className="relative mt-4">
