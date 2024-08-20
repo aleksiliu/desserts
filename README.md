@@ -25,8 +25,6 @@ Users should be able to:
 
 - Live Site URL: [https://stirring-douhua-ec0aa3.netlify.app/](https://stirring-douhua-ec0aa3.netlify.app/)
 
-## My process
-
 ### Built with
 
 - React and TypeScript
