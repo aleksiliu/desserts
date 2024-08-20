@@ -16,7 +16,7 @@ const Watches: React.FC<WatchesProps> = ({ addToCart, removeFromCart, cart }) =>
       <h1 className="text-gray-300 text-4xl font-semibold tracking-[-0.96px] mb-8">
        Watches
       </h1>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 md:grid-cols-2 gap-6">
         {watchItems.map((watch: Watch) => {
           // Find the specific watch in the cart
           const cartItem = cart.find((item) => item.name === watch.name);
