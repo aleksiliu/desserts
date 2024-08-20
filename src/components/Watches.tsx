@@ -24,7 +24,7 @@ const Watches: React.FC<WatchesProps> = ({ addToCart, removeFromCart, cart }) =>
 
           return (
             <div key={watch.name}>
-              <div>
+              <div className='mb-2'>
                 <img className="rounded mb-4" src={watch.image} alt={watch.name} />
                 <div className="group relative -mt-10 z-1 flex justify-center">
                   <Button text="Add to Cart" onClick={() => addToCart(watch)} className='group-hover:hidden' />

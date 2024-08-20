@@ -44,7 +44,7 @@ const App: React.FC = () => {
   
 
   return (
-    <div className="container grid grid-cols-2 gap-14 my-16" >
+    <div className="container grid grid-cols-2 md:grid-cols-1 gap-14 my-16" >
       <Watches cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} />
       <aside>
         <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} />

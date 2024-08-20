@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   color = 'primary',
 }) => {
-  const baseStyle = `text-black border border-slate-500 px-6 py-4 rounded-full shadow ${className}`;
+  const baseStyle = `text-black px-6 py-4 rounded-full shadow ${className}`;
   const colorStyles = {
     primary: `bg-white hover:bg-white-500`,
     secondary: `bg-indigo-400 hover:bg-indigo-500 text-white`,
