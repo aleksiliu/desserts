@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-import type { CartItem } from '../data/types'; 
+import type { CartItem, Watch } from '../data/types'; 
 import Button from './Button';
 
 interface CartProps {
   cart: CartItem[];
   setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  removeFromCart: (watch: Watch) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
+const Cart: React.FC<CartProps> = ({ cart, setCart, removeFromCart }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const calculateTotal = () => {
@@ -48,6 +49,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
           {cart.map((item) => (
             <li key={item.name} className="mb-2">
              {item.quantity} x <span className="font-semibold">{item.name}</span> - {item.price} €
+             <button onClick={() => removeFromCart(item)} className="text-md font-bold px-2">Remove</button>
             </li>
           ))}
         </ul>
