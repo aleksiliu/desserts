@@ -1,8 +1,8 @@
 import React from 'react';
-import { watchItems } from '../data/watches';
+import { watchItems } from '../data/watches.ts';
 import Button from '../components/Button';
 
-import type { Watch, CartItem } from '../data/types'; 
+import type { Watch, CartItem } from '../data/types.ts'; 
 
 interface WatchesProps {
   cart: CartItem[];

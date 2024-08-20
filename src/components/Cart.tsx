@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-import type { CartItem, Watch } from '../data/types'; 
+import type { CartItem, Watch } from '../data/types.ts'; 
 import Button from './Button';
 
 interface CartProps {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Watches from './Watches.jsx';
 import Cart from './Cart.tsx';
-import type { Watch, CartItem } from '../data/types'; 
+import type { Watch, CartItem } from '../data/types.ts'; 
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
