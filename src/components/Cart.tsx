@@ -53,9 +53,8 @@ const Cart: React.FC<CartProps> = ({ cart, setCart, removeFromCart }) => {
             </li>
           ))}
         </ul>
-        <p> Order Total: {calculateTotal()} €</p>
 
-      <Button text="Confirm Order" color="secondary" onClick={handleConfirmOrder} className='w-full mt-4 font-bold' />
+      <Button text={`Confirm Order ${calculateTotal()} €`} color="secondary" onClick={handleConfirmOrder} className='w-full mt-4 font-bold' />
       
       </>
       )}
