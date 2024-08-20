@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Watches from './Watches.jsx';
-import Cart from './Cart.jsx';
+import Cart from './Cart.tsx';
 import type { Watch, CartItem } from '../data/types'; 
 
 const App: React.FC = () => {

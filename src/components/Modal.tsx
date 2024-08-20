@@ -1,7 +1,15 @@
 import React from 'react';
-import Button from '../components/Button';
+import Button from './Button';
 
-const Modal = ({ isOpen, onClose, title, children, buttonText }) => {
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  buttonText: string;
+  children: React.ReactNode;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children, buttonText }) => {
   if (!isOpen) return null;
 
   return (
