@@ -8,7 +8,7 @@ export const watchItems: Watch[] = [
         "price": 8500
     },
     {
-        "image": "./assets/images/image-rolex.webp",
+        "image": "./assets/images/image-omega.webp",
         "name": "Omega Seamaster",
         "brand": "Omega",
         "price": 5000

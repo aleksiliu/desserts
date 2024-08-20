@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, title, children, buttonText }) => {
         <div className="mb-6">
           {children}
         </div>
-        <Button text={buttonText} color="secondary" onClick={onClose} className='w-full' />
+        <Button text={buttonText} color="secondary" onClick={onClose} className='w-full font-bold' />
       </div>
     </div>
   );

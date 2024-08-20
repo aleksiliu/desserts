@@ -53,7 +53,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
         </ul>
         <p> Order Total: {calculateTotal()} €</p>
 
-      <Button text="Confirm Order" color="secondary" onClick={handleConfirmOrder} className='w-full' />
+      <Button text="Confirm Order" color="secondary" onClick={handleConfirmOrder} className='w-full mt-4 font-bold' />
       
       </>
       )}
@@ -70,12 +70,12 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
             <div key={watch.name} className="relative mt-4">
               <p>{watch.brand}</p>
               <h2 className="font-bold">{watch.quantity} x {watch.name}</h2>
-              <p className="text-orange-700">{watch.price} €</p>
+              <p className="text-gray-300">{watch.price} €</p>
              
             </div>
           );
         })}
-         <p> Order Total: {calculateTotal()} €</p>
+         <p className='mt-4'> Order Total: {calculateTotal()} €</p>
       </Modal>
     </div>
   );
