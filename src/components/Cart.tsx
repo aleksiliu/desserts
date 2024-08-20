@@ -27,8 +27,8 @@ const Cart: React.FC<CartProps> = ({ cart, setCart }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-semibold text-orange-700 mb-4">
+    <div className="bg-[#282828] rounded-lg shadow-lg p-6">
+      <h2 className="text-xl font-semibold text-gray-300 mb-4">
         Your Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
       </h2>
       {cart.length === 0 ? (
